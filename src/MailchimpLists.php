@@ -27,6 +27,20 @@ class MailchimpLists extends Mailchimp {
   public function getLists($parameters = []) {
     return $this->request('GET', '/lists', NULL, $parameters);
   }
+  
+  /**
+   * Creates a MailChimp list.
+   *
+   * @param array $parameters
+   *   Associative array of optional request parameters.
+   *
+   * @return object
+   *
+   * @see http://developer.mailchimp.com/documentation/mailchimp/reference/lists/#read-get_lists
+   */
+  public function createList($parameters = []) {
+      return $this->request('POST', '/lists', NULL, $parameters);
+  }
 
   /**
    * Gets a Mailchimp list.
